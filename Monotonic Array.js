@@ -1,22 +1,17 @@
 //896.
-// var isMonotonic = function (nums) {
-//   let increasing;
-//   let isMonoton = true;
-//   if (nums[0] < nums[1]) {
-//     increasing = true;
-//   } else {
-//     increasing = false;
-//   }
-//   for (let i = 0; i < nums.length; i++) {
-//     if (increasing) {
-//       if (nums[i] > nums[i + 1]||nums[i] !== nums[i + 1]) {
-//         isMonoton = false;
-//       }
-//     } else {
-//       if (nums[i] < nums[i + 1]||nums[i] !== nums[i + 1]) {
-//         isMonoton = false;
-//       }
-//     }
-//   }
-//   return isMonoton;
-// };
+ var isMonotonic = function (nums) {
+ let isIncreasing=true;
+ let isDecreasing=true;
+ for(let i=0;i<nums.length;i++)
+ {
+    if(nums[i]<nums[i+1])
+    {
+        isDecreasing=false
+    }
+    if(nums[i]>nums[i+1])
+    {
+        isIncreasing=false
+    }
+ }
+ return isDecreasing||isIncreasing
+ };
